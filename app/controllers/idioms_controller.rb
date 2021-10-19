@@ -1,5 +1,6 @@
 class IdiomsController < ApplicationController
-  
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @idioms = Idiom.all.order('created_at DESC')
   end
@@ -30,6 +31,12 @@ class IdiomsController < ApplicationController
   private
   def idiom_params
    params.require(:idiom).permit(:title, :text)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
 end
