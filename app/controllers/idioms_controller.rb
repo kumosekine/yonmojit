@@ -30,7 +30,7 @@ class IdiomsController < ApplicationController
 
   private
   def idiom_params
-   params.require(:idiom).permit(:title, :text)
+   params.require(:idiom).permit(:title, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index
