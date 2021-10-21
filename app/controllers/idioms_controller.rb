@@ -2,7 +2,7 @@ class IdiomsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @idioms = Idiom.all.order('created_at DESC')
+    @idioms = Idiom.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -26,10 +26,8 @@ class IdiomsController < ApplicationController
   
   def show
     @idiom = Idiom.find(params[:id])
-  end
-
-  def overview
-  
+    @comment = Comment.new
+    @comments = @idiom.comments.includes(:user)
   end
 
   private

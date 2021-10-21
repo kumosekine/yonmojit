@@ -1066,3 +1066,20 @@ footer p {
 .show {
   padding: 50px 0;
 }
+
+.info {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.over_view { 
+  text-align: center;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.comment-form {
+  width: 300px;
+  padding: 15px;
+}
