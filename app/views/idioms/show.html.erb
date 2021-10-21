@@ -1,8 +1,8 @@
-<div class="contents row">
-      <span class="name"><%= @idiom.title %>
-    </span>
-       <p><%= @idiom.text %>
-    </p>
-    <p class="day_time"><%= @idiom.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></p>
+<div class="contents row show">
+    <span class="name title"><%= @idiom.title %></span>
+    <p><%= @idiom.text %></p>
+    <p>投稿者<%= @idiom.user.nickname %>さん <%= @idiom.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></p>
+    <% if user_signed_in? && current_user.id == @idiom.user_id %>
     <%= link_to '削除', idiom_path(@idiom.id), method: :delete %>
+    <% end %>
 </div>

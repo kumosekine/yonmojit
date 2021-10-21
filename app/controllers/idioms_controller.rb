@@ -28,6 +28,10 @@ class IdiomsController < ApplicationController
     @idiom = Idiom.find(params[:id])
   end
 
+  def overview
+  
+  end
+
   private
   def idiom_params
    params.require(:idiom).permit(:title, :text).merge(user_id: current_user.id)

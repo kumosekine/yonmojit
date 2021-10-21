@@ -1,0 +1,8 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @idioms.order('created_at DESC').each do |idiom| %>
+  <p class="title"><%= idiom.title %></p>
+  <p><%= idiom.text %></p>
+  <p><%= idiom.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></p>
+  <% end %>
+</div>

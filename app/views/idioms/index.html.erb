@@ -1,8 +1,8 @@
 <div class= "contents row">
 <% @idioms.each do |idiom| %>
 <%= link_to idiom_path(idiom.id) do %>
-<p><%= idiom.title %></p>
-<p class="day_time"><%= idiom.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></p>
+<p class="title"><%= idiom.title %></p>
+<p>投稿者<%= idiom.user.nickname %>さん  <%= idiom.updated_at.strftime("%Y年%m月%d日 %H:%M:%S") %></p>
 <% end %>
 <% end %>
 </div>
